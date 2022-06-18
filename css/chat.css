@@ -229,3 +229,15 @@ label {
 .stickers li{
     margin: 10%;
 }
+
+
+#notlogged {
+    position: absolute;
+    z-index: 5;
+    left: 40%;
+    visibility: hidden;
+    display: none;
+    margin-top: 20%;
+    color: red;
+    background-color: black;
+}

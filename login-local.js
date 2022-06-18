@@ -7,6 +7,7 @@ document.getElementById("join").addEventListener("click", function () {
         sessionStorage.setItem("username", name);
         var contact = document.getElementById("contact").value;
         sessionStorage.setItem("contact", contact);
+        sessionStorage.setItem("login", "yes");
         window.location.replace("chat.html");
     }
     else

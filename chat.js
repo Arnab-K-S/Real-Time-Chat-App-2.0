@@ -11,8 +11,7 @@ const firebaseConfig = {
     appId: "1:409678714305:web:b70e44805e0dad240d8b40"
 };
 firebase.initializeApp(firebaseConfig);
-
-let login=false;
+let login="no";
 // document.getElementById("name").value
 let name_value = sessionStorage.getItem("username");
 console.log(name_value);
@@ -20,13 +19,28 @@ let contact = sessionStorage.getItem("contact");
 console.log(contact);
 document.getElementById("container").style.display = "block";
 login = sessionStorage.getItem("login");
-
+console.log(login)
 //  ---------Login System-------------
 
-if (login==true){
+if (login=="yes"){
+    
+    //-----------------------Sending Messsage-------------------------
+    
+    document.addEventListener("onload",function(snapshot) {
+            var html = "";
+            html += "<li>";
+            let name = name_value;
+            if (snapshot.val().name == name + contact)
+                html += "<div class=\"me\">" + snapshot.val().message;
+            else if (snapshot.val().name == contact + name)
+                // "<h4>" + snapshot.val().name + "</h4>" +
+                html += "<div class=\"you\">" + snapshot.val().message;
+            html += "</div>";
+            document.getElementById("cd").innerHTML += html;
+            var myDiv = document.getElementById("cd");
+            myDiv.scrollTop = myDiv.scrollHeight;
 
-//-----------------------Sending Messsage-------------------------
-
+        });
 function sendmessage() {
     console.log("Function executed");
     let name = name_value;
@@ -72,9 +86,12 @@ input.addEventListener("keypress", function (event) {
     }
 });
 }
+
 else{
     document.body.style.backgroundColor="black";
     document.getElementById("all").style.display="none";
+    document.getElementById("notlogged").style.visibility="visible";
+    document.getElementById("notlogged").style.display="block";
     document.getElementById("notlogged").innerHTML=`<h1> Please Login First </h1><br>
     <a href="login-local.html">Go to Login Page</a>`;
 }
