@@ -1,0 +1,73 @@
+@media only screen and (max-width: 700px) {
+
+    *{
+        font-size: medium;
+    }
+    .container {
+        height: 70%;
+    }
+
+    .screen,
+    .parent {
+        padding: 0%;
+        margin: 0%;
+        height: 50%;
+    }
+    body{
+        overflow-y: scroll;
+        min-height: max-content;
+    }
+   
+    .you,
+    .me {
+        border-radius: 1vh;
+        box-shadow: 0vh 0vh 0vh 0vh;
+    }
+
+    nav {
+        height: 8vh;
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .namecontainer {
+        margin-top: 1%;
+    }
+
+    .contact-name {
+        display: none;
+        width: 0px;
+        visibility: hidden;
+    }
+
+    button {
+        padding: 0;
+    }
+
+    .mbar {
+        position: fixed;
+        margin-top: 80vh;
+        bottom: 1rem;
+        display: flex;
+        height: 2vh;
+        width: 100%;
+        background-image: radial-gradient(rgb(0, 208, 255),rgb(0, 255, 208));
+    }
+    .you,.me{
+        font-size: 3vh;
+    }
+
+    input,input:focus {
+        background-color: rgb(255, 255, 255);
+        padding-left: 1%;
+        width: auto;
+        height: 5vh;
+        outline: none;
+        font-size: 2vh;
+        margin-left: 1%;
+    }
+
+    h1{
+        font-size: 3vh;
+    }
+}
