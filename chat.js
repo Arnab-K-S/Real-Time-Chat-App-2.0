@@ -12,17 +12,18 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-
+let login=false;
 // document.getElementById("name").value
 let name_value = sessionStorage.getItem("username");
 console.log(name_value);
 let contact = sessionStorage.getItem("contact");
 console.log(contact);
 document.getElementById("container").style.display = "block";
+login = sessionStorage.getItem("login");
 
 //  ---------Login System-------------
 
-
+if (login==true){
 
 //-----------------------Sending Messsage-------------------------
 
@@ -70,3 +71,10 @@ input.addEventListener("keypress", function (event) {
 
     }
 });
+}
+else{
+    document.body.style.backgroundColor="black";
+    document.getElementById("all").style.display="none";
+    document.getElementById("notlogged").innerHTML=`<h1> Please Login First </h1><br>
+    <a href="login-local.html">Go to Login Page</a>`;
+}
