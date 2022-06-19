@@ -11,7 +11,6 @@ nav {
     position: sticky;
     width: 100%;
 }
-
 .container {
     display: none;
 }
@@ -26,13 +25,21 @@ nav {
     padding: 0%;
     margin: 0%;
 }
-
 body {
+    /* filter: invert(180); */
     /* overflow: hidden; */
+    cursor: url('cursors/ring.png'), auto;
+    mix-blend-mode: multiply;
+}
+
+.cursor{
+    color: black;
 }
 
 /* ------------------------------------------------------------------- */
 #cd {
+    
+
     /* background-image: linear-gradient(rgb(218, 218, 218), white); */
     width: 100%;
     max-height: 80%;
@@ -72,6 +79,8 @@ input {
 }
 
 #sub {
+    width: 10vh;
+    height: 10vh;
     padding: 4%;
     border-radius: 100%;
     border: none;
@@ -192,7 +201,6 @@ label {
 
 #options{
     position: fixed;
-    /* top: 30%; */
     z-index: 1;
     background-color: rgb(255, 255, 255);
     box-shadow: 0vh 0vh 2vh 0vh rgba(0, 0, 0, 0.419);
@@ -203,7 +211,6 @@ label {
     width: auto;
     height: 100%;
     padding-top: 14vh;
-    /* justify-content: space-between; */
     transition: 1s ease-in-out;
 }
 
@@ -215,22 +222,6 @@ label {
     border-radius: 25vh;
 }
 
-.stickers{
-    position: relative;
-    list-style: none;
-    height: 50vh;
-    width: 50vh;
-
-    overflow: scroll;
-    display: flex;
-    /* padding-left: 5%; */
-    justify-content: space-between;
-}
-.stickers li{
-    margin: 10%;
-}
-
-
 #notlogged {
     position: absolute;
     z-index: 5;
@@ -240,4 +231,13 @@ label {
     margin-top: 20%;
     color: red;
     background-color: black;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }

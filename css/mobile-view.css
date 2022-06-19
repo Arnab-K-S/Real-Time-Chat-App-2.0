@@ -51,7 +51,10 @@
         display: flex;
         height: 2vh;
         width: 100%;
-        background-image: radial-gradient(rgb(0, 208, 255),rgb(0, 255, 208));
+        padding-bottom: 2%;
+    }
+    #message{
+        width: 100%;
     }
     .you,.me{
         font-size: 3vh;
