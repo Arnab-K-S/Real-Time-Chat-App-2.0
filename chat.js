@@ -22,8 +22,7 @@ if (login == "yes") {
 
     let name_value = sessionStorage.getItem("username");
     console.log(name_value);
-    let contact = document.getElementById("cont").value;
-    sessionStorage.getItem("contact");
+    let contact = sessionStorage.getItem("contact");
     console.log(contact);
 // -------------------------Contacts------------------------
     // firebase.database().ref("User").on("child_added", function (snapshot) {
