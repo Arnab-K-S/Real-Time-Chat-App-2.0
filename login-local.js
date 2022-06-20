@@ -53,10 +53,10 @@ function codeverify() {
 
 
 document.getElementById("join").addEventListener("click", function () {
-    if (document.getElementById("name").value != '' && document.getElementById("phone").value != '') {
+    if (document.getElementById("name").value != ''&& document.getElementById("phone").value != '') {
         var name = document.getElementById("name").value;
         sessionStorage.setItem("username", name);
-        phoneAuth()
+        phoneAuth();
         //         var contact = document.getElementById("contact").value;
         //         sessionStorage.setItem("contact", contact);
      
