@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 let login="no";
 // document.getElementById("name").value
-// document.getElementById("container").style.display = "block";
+document.getElementById("container").style.display = "block";
 login = sessionStorage.getItem("login");
 console.log(login)
 //  ---------Login System-------------
@@ -23,13 +23,13 @@ if (login == "yes") {
     let name_value = sessionStorage.getItem("username");
     console.log(name_value);
     let contact = document.getElementById("cont").value;
-    // sessionStorage.getItem("contact");
+    sessionStorage.getItem("contact");
     console.log(contact);
-
-    // -------------------------Contacts------------------------
-    firebase.database().ref("User").on("child_added", function (snapshot) {
-        document.getElementById("cont").innerHTML += `<option value="` + snapshot.val().name + `">` + snapshot.val().name + `</option>`;
-    });
+// -------------------------Contacts------------------------
+    // firebase.database().ref("User").on("child_added", function (snapshot) {
+    //     document.getElementById("cont").innerHTML += `<option value="` + snapshot.val().name + `">` + snapshot.val().name + `</option>`;
+    // });
+    document.getElementById("contact2").innerText=contact;
     //-----------------------Sending Messsage-------------------------
     
     document.addEventListener("onload",function(snapshot) {

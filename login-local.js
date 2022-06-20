@@ -29,7 +29,7 @@ function login(){
         login=true;
         sessionStorage.setItem("username", name);
         sessionStorage.setItem("login", "yes");
-        sessionStorage.setItem("contact", "Arnab");
+        sessionStorage.setItem("contact", document.getElementById("cont").value);
         window.location.replace("chat.html");
         
     }
@@ -54,3 +54,7 @@ document.getElementById("join").addEventListener("click", function () {
     else
     alert("Enter the required fields");  
 })
+
+firebase.database().ref("User").on("child_added", function (snapshot) {
+    document.getElementById("cont").innerHTML += `<option value="` + snapshot.val().name + `">` + snapshot.val().name + `</option>`;
+});
