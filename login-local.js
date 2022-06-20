@@ -1,20 +1,5 @@
 
 
-// document.getElementById("join").addEventListener("click", function () {
-//     if (document.getElementById("name").value != '' && document.getElementById("contact").value!='') {
-//         document.getElementById("login").style.display = "none";
-//         var name = document.getElementById("name").value;
-//         sessionStorage.setItem("username", name);
-//         var contact = document.getElementById("contact").value;
-//         sessionStorage.setItem("contact", contact);
-//         sessionStorage.setItem("login", "yes");
-//         window.location.replace("chat.html");
-//     }
-//     else
-//         alert("Enter the required names");
-
-// })
-
 
 // Configuration
 
@@ -34,6 +19,7 @@ function render() {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
     recaptchaVerifier.render();
 }
+let coderesult;
 // function for send message
 function phoneAuth() {
     var number = "+91"
@@ -41,10 +27,13 @@ function phoneAuth() {
     firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
         document.getElementById("join").disabled = true;
         window.confirmationResult = confirmationResult;
-        let coderesult = confirmationResult;
+        coderesult = confirmationResult;
         console.log(coderesult);
         document.getElementById('sender').style.display = 'none';
         document.getElementById('verifier').style.display = 'block';
+        sessionStorage.setItem("login", "yes");
+        firebase.auth().signInWithCredential(credential);
+        window.location.replace("chat.html");
     }).catch(function (error) {
         alert(error.message);
     });
@@ -60,5 +49,20 @@ function codeverify() {
     })
 }
 
-document.getElementById("join").addEventListener("click",phoneAuth);
+
+
+
+document.getElementById("join").addEventListener("click", function () {
+    if (document.getElementById("name").value != '' && document.getElementById("phone").value != '') {
+        var name = document.getElementById("name").value;
+        sessionStorage.setItem("username", name);
+        phoneAuth()
+        //         var contact = document.getElementById("contact").value;
+        //         sessionStorage.setItem("contact", contact);
+     
+    }
+    else
+    alert("Enter the required names");
+    
+})
 document.getElementById("verify").addEventListener("click",codeverify);
