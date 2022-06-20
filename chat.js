@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 let login="no";
 // document.getElementById("name").value
-document.getElementById("container").style.display = "block";
+// document.getElementById("container").style.display = "block";
 login = sessionStorage.getItem("login");
 console.log(login)
 //  ---------Login System-------------
@@ -92,18 +92,21 @@ input.addEventListener("keypress", function (event) {
     }
 });
 
-document.getElementById("menu").addEventListener("click",function contacts() {
+// document.getElementById("menu").addEventListener("click",function contacts() {
     
-})
+// })
 
 }
 
 else{
-    document.body.style.backgroundColor="black";
+    // document.body.style.backgroundColor="black";
     document.getElementById("all").style.display="none";
-    document.getElementById("notlogged").style.visibility="visible";
     document.getElementById("notlogged").style.display="block";
-    document.getElementById("notlogged").innerHTML=`<h1> Please Login First </h1><br>
-    <a href="login-local.html">Go to Login Page</a>`;
+    document.getElementById("notlogged").style.visibility="visible";
+    document.getElementById("notlogged").innerHTML=`
+    <h1> Please Login First </h1><br>
+    <a href="login-local.html">Go to Login Page</a>
+    <img src="" alt=".">
+    `;
 }
 

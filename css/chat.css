@@ -141,7 +141,7 @@ h4 {
 
 /* =============================================================================================== */
 /* =============================================================================================== */
-
+/* 
 .login {
     position: absolute;
     height: 100%;
@@ -154,9 +154,8 @@ h4 {
     justify-content: center;
     flex-direction: column;
     backdrop-filter: blur(10px);
-    /* backface-visibility: hidden; */
 
-}
+} */
 label {
     /* margin: 10%; */
     padding-inline: 5%;
@@ -224,14 +223,19 @@ label {
 }
 
 #notlogged {
+    width: 100%;
+    height: 100%;
     position: absolute;
     z-index: 5;
-    left: 40%;
-    visibility: hidden;
+    visibility:hidden; 
     display: none;
-    margin-top: 20%;
+    text-align: center;
+    padding-top: 5%;
     color: red;
-    background-color: black;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.837), rgba(0, 0, 0, 0.712)), url("https://www.venafi.com/sites/default/files/styles/823x390/public/content/blog/2016-08/Blog-WarningImg-1200x325.jpg?itok=GJGeFg5j");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 

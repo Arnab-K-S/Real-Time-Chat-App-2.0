@@ -31,7 +31,7 @@
                 <h3 id="contact2">
                 <label for="cont">CHOOSE CONTACT:</label>
                 <select id="cont" name="User to chat with">
-                    
+
                 </select>
                 </h3>
                 <h5>Online</h5>
@@ -51,32 +51,9 @@
             </div>
         </div>
     </div>
-</div>
 <div id="notlogged"></div>
 </body>
-<script>
-    document.onkeydown = function (e) {
-        if (event.keyCode == 123) {
-            return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-            return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-            return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-            return false;
-        }
-        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-            return false;
-        }
-    }
-    document.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
-    });
-
-</script>
+<!-- <script src="disable _inspect.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 <script src="chat.js"></script>
 </html>
