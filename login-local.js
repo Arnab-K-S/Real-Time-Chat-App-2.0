@@ -41,7 +41,7 @@ function phoneAuth() {
     firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
         document.getElementById("join").disabled = true;
         window.confirmationResult = confirmationResult;
-        coderesult = confirmationResult;
+        let coderesult = confirmationResult;
         console.log(coderesult);
         document.getElementById('sender').style.display = 'none';
         document.getElementById('verifier').style.display = 'block';
