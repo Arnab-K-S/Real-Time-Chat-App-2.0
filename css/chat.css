@@ -158,12 +158,12 @@ h4 {
 
 }
 label {
-    margin: 10%;
-    padding: 10%;
+    /* margin: 10%; */
+    padding-inline: 5%;
     box-shadow: 1vh 1vh 1vh 0vh rgba(0, 0, 0, 0.195);
     border: 1vh solid rgba(34, 0, 255, 0.405);
     font-family: 'Nunito', sans-serif;
-    font-size: 3vh;
+    font-size: 2vh;
     border-radius: 1vh 25vh 2vh 25vh;
 }
 

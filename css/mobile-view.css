@@ -25,7 +25,7 @@
     }
 
     nav {
-        height: 8vh;
+        height: 10vh;
         flex-direction: column;
         overflow: scroll;
     }
@@ -34,11 +34,11 @@
         margin-top: 1%;
     }
 
-    .contact-name {
-        display: none;
-        width: 0px;
-        visibility: hidden;
-    }
+    /* .contact-name { */
+        /* display: none; */
+        /* width: 0px; */
+        /* visibility: hidden; */
+    /* } */
 
     button {
         padding: 0;

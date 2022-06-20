@@ -13,17 +13,23 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 let login="no";
 // document.getElementById("name").value
-let name_value = sessionStorage.getItem("username");
-console.log(name_value);
-let contact = sessionStorage.getItem("contact");
-console.log(contact);
 document.getElementById("container").style.display = "block";
 login = sessionStorage.getItem("login");
 console.log(login)
 //  ---------Login System-------------
 
-if (login=="yes"){
-    
+if (login == "yes") {
+
+    let name_value = sessionStorage.getItem("username");
+    console.log(name_value);
+    let contact = document.getElementById("cont").value;
+    // sessionStorage.getItem("contact");
+    console.log(contact);
+
+    // -------------------------Contacts------------------------
+    firebase.database().ref("User").on("child_added", function (snapshot) {
+        document.getElementById("cont").innerHTML += `<option value="` + snapshot.val().name + `">` + snapshot.val().name + `</option>`;
+    });
     //-----------------------Sending Messsage-------------------------
     
     document.addEventListener("onload",function(snapshot) {
@@ -100,3 +106,4 @@ else{
     document.getElementById("notlogged").innerHTML=`<h1> Please Login First </h1><br>
     <a href="login-local.html">Go to Login Page</a>`;
 }
+

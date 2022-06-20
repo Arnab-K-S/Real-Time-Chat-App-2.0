@@ -27,6 +27,9 @@ function login(){
     if (snapshot.val().name == name && snapshot.val().password==password )
     {
         login=true;
+        sessionStorage.setItem("username", name);
+        sessionStorage.setItem("login", "yes");
+        sessionStorage.setItem("contact", "Arnab");
         window.location.replace("chat.html");
         
     }
