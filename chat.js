@@ -85,6 +85,11 @@ input.addEventListener("keypress", function (event) {
 
     }
 });
+
+document.getElementById("menu").addEventListener("click",function contacts() {
+    
+})
+
 }
 
 else{
