@@ -14,51 +14,18 @@
 <body>
         <div id="login" class="login">
             <div id="sender">
-                <label>Enter your name to chat</label>
+                <h1>Login</h1>
+                <label>Enter your name</label>
                 <input id="name" type="text">
-                <label>Enter your Number to chat</label>
-                <div id="number">
-                    <h1>+91</h1>
-                    <input id="phone" type="tel" pattern="[0-9]{10}">
-                </div>
-                <div id="recaptcha-container"></div>
+                <label>Enter your password</label>
+                <input id="password" type="text">
                 <input id="join" type="submit" value="Join">
             </div>
-            
-            <div id="verifier">
-                <label>Enter your OTP</label>
-                <input type="number" id="OTP">
-                <input id="verify" type="submit" value="Verify">
-                <!-- <label>Enter scholar ID of whom you want to chat</label> -->
-                <!-- <input id="contact" type="number" pattern="2-[0-9]{6}"> -->
-            </div>
-            
         </div>
 
 </body>
-<script>
-    // document.onkeydown = function (e) {
-    //     if (event.keyCode == 123) {
-    //         return false;
-    //     }
-    //     if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-    //         return false;
-    //     }
-    //     if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-    //         return false;
-    //     }
-    //     if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-    //         return false;
-    //     }
-    //     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-    //         return false;
-    //     }
-    // }
-    // document.addEventListener('contextmenu', function (e) {
-    //     e.preventDefault();
-    // });
-
-</script>
+<!-- <script src="disable _inspect.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 <script src="login-local.js"></script>
 </html>
+

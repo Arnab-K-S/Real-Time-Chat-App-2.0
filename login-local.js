@@ -14,55 +14,40 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-render();
-function render() {
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-    recaptchaVerifier.render();
-}
-let coderesult;
-// function for send message
-function phoneAuth() {
-    var number = "+91"
-    number+=document.getElementById('phone').value;
-    firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
-        document.getElementById("join").disabled = true;
-        window.confirmationResult = confirmationResult;
-        coderesult = confirmationResult;
-        console.log(coderesult);
-        document.getElementById('sender').style.display = 'none';
-        document.getElementById('verifier').style.display = 'block';
-        sessionStorage.setItem("login", "yes");
-        firebase.auth().signInWithCredential(credential);
+
+let login_status=false;
+
+login();
+function login(){
+    console.log("Loging in");
+    firebase.database().ref("User").on("child_added", function (snapshot) {
+    console.log("Firebase Executed");
+    var name = document.getElementById("name").value;
+    var password = document.getElementById("password").value;
+    if (snapshot.val().name == name && snapshot.val().password==password )
+    {
+        login=true;
         window.location.replace("chat.html");
-    }).catch(function (error) {
-        alert(error.message);
-    });
+        
+    }
+});
 }
-// function for code verify
-function codeverify() {
-    document.getElementById("verify").disabled = true;
-    var code = document.getElementById('verify').value;
-    coderesult.confirm(code).then(function () {
-        alert("logged in")
-    }).catch(function () {
-        alert("error")
-    })
-}
-
-
-
-
 document.getElementById("join").addEventListener("click", function () {
-    if (document.getElementById("name").value != ''&& document.getElementById("phone").value != '') {
+    if (document.getElementById("name").value != '' && document.getElementById("password").value != '') {
+        login();
         var name = document.getElementById("name").value;
         sessionStorage.setItem("username", name);
-        phoneAuth();
+        if (login_status==false){
+            document.getElementById("name").value='';
+            document.getElementById("password").value='';
+            alert("Invalid User ID or Password");
+            document.getElementById("name").focus=true;
+        }
+
         //         var contact = document.getElementById("contact").value;
         //         sessionStorage.setItem("contact", contact);
      
     }
     else
-    alert("Enter the required names");
-    
+    alert("Enter the required fields");  
 })
-document.getElementById("verify").addEventListener("click",codeverify);

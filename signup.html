@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="css/login.css" rel="stylesheet">
+    <title>Chat App | Login</title>
+</head>
+
+<body>
+        <div id="login" class="login">
+            <div id="sender">
+                <h1>SIGN UP</h1>
+                <label>Enter your name</label>
+                <input id="name" type="text">
+                <label>Enter your password</label>
+                <input id="password" type="text">
+                <label>Confirm your password</label>
+                <input id="password2" type="text">
+                <label>Enter your Number </label>
+                <h2>Only for authentication purpose, will not be visible in the App</h2>
+                <div id="number">
+                    <h1>+91</h1>
+                    <input id="phone" type="tel" pattern="[0-9]{10}">
+                </div>
+                <div id="recaptcha-container"></div>
+                <input id="join" type="submit" value="Join">
+            </div>
+            
+            <div id="verifier">
+                <label>Enter your OTP</label>
+                <input type="number" id="OTP">
+                <input id="verify" type="submit" value="Verify">
+                <!-- <label>Enter scholar ID of whom you want to chat</label> -->
+                <!-- <input id="contact" type="number" pattern="2-[0-9]{6}"> -->
+            </div>
+            
+        </div>
+
+</body>
+<script>
+    // document.onkeydown = function (e) {
+    //     if (event.keyCode == 123) {
+    //         return false;
+    //     }
+    //     if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    //         return false;
+    //     }
+    //     if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    //         return false;
+    //     }
+    //     if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    //         return false;
+    //     }
+    //     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    //         return false;
+    //     }
+    // }
+    // document.addEventListener('contextmenu', function (e) {
+    //     e.preventDefault();
+    // });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="signup.js"></script>
+</html>
+
