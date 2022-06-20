@@ -39,6 +39,7 @@ function phoneAuth() {
     var number = "+91"
     number+=document.getElementById('phone').value;
     firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
+        document.getElementById("join").disabled = true;
         window.confirmationResult = confirmationResult;
         coderesult = confirmationResult;
         console.log(coderesult);
@@ -50,7 +51,8 @@ function phoneAuth() {
 }
 // function for code verify
 function codeverify() {
-    var code = document.getElementById('verificationcode').value;
+    document.getElementById("verify").disabled = true;
+    var code = document.getElementById('verify').value;
     coderesult.confirm(code).then(function () {
         alert("logged in")
     }).catch(function () {
